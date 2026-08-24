@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class VIIIC — SMPN 03 Tanjung Raja</title>
+  <meta name="description" content="Website resmi kelas VIIIC SMPN 03 Tanjung Raja.">
+  <style>
+    :root{
+      --bg:#f5f7fb; --card:#fff; --text:#172033; --muted:#667085;
+      --primary:#3157d5; --primary2:#6d5dfc; --line:#e7eaf1;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    header{
+      position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
+    }
+    nav{max-width:1100px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;font-size:20px}.logo span{color:var(--primary)}
+    .navlinks{display:flex;gap:20px;list-style:none}
+    .navlinks a{font-size:14px;font-weight:600;color:#475467}
+    .navlinks a:hover{color:var(--primary)}
+    .menu{display:none;border:0;background:none;font-size:25px}
+    .hero{
+      min-height:590px;display:flex;align-items:center;justify-content:center;text-align:center;
+      padding:70px 20px;color:white;
+      background:linear-gradient(135deg,#203a9a,#3157d5 55%,#6d5dfc);
+    }
+    .hero-inner{max-width:800px}
+    .badge{display:inline-block;padding:8px 15px;border:1px solid rgba(255,255,255,.3);
+      background:rgba(255,255,255,.12);border-radius:999px;font-size:13px;margin-bottom:18px}
+    h1{font-size:clamp(44px,9vw,82px);line-height:1;margin-bottom:15px;letter-spacing:-3px}
+    .hero p{font-size:18px;opacity:.92}
+    .buttons{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+    .btn{padding:12px 19px;border-radius:12px;font-weight:700;display:inline-block}
+    .btn-light{background:white;color:#203a9a}.btn-ghost{border:1px solid rgba(255,255,255,.45);color:white}
+    section{max-width:1100px;margin:auto;padding:75px 20px}
+    .section-title{text-align:center;margin-bottom:35px}
+    .section-title h2{font-size:32px;margin-bottom:8px}.section-title p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(30,41,59,.05)}
+    .icon{font-size:32px;margin-bottom:12px}.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:stretch}
+    .quote{background:#111a35;color:white;border-radius:22px;padding:35px;display:flex;flex-direction:column;justify-content:center}
+    .quote p{font-size:22px;font-weight:700}.quote small{margin-top:15px;opacity:.7}
+    .schedule{width:100%;border-collapse:collapse;background:white;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+    .schedule th,.schedule td{padding:14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+    .schedule th{background:#eef2ff;color:#253da0}
+    .schedule tr:last-child td{border-bottom:0}
+    .members{grid-template-columns:repeat(4,1fr)}
+    .member{text-align:center}.avatar{width:65px;height:65px;border-radius:50%;margin:0 auto 12px;
+      display:grid;place-items:center;background:#e8edff;color:#3157d5;font-size:25px;font-weight:800}
+    .member p{font-size:13px;color:var(--muted)}
+    .contact{text-align:center;background:linear-gradient(135deg,#eef2ff,#f8f7ff);border-radius:25px;padding:45px 20px}
+    footer{text-align:center;padding:25px 20px;background:#111a35;color:#cbd2e6;font-size:13px}
+    @media(max-width:800px){
+      .navlinks{display:none}.menu{display:block}.grid,.about{grid-template-columns:1fr}.members{grid-template-columns:repeat(2,1fr)}
+      .hero{min-height:520px}.section-title h2{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="logo" href="#home">Class <span>VIIIC</span></a>
+    <button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#jadwal">Jadwal</a></li><li><a href="#piket">Piket</a></li>
+      <li><a href="#anggota">Anggota</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="badge">🏫 SMPN 03 Tanjung Raja</div>
+      <h1>CLASS VIIIC</h1>
+      <p>Belajar bersama, tumbuh bersama, dan menciptakan kenangan yang tidak terlupakan.</p>
+      <div class="buttons">
+        <a class="btn btn-light" href="#tentang">Jelajahi Kelas</a>
+        <a class="btn btn-ghost" href="#jadwal">Lihat Jadwal</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="section-title">
+      <h2>Tentang Kelas</h2>
+      <p>Tempat berbagi ilmu, cerita, dan semangat.</p>
+    </div>
+    <div class="about">
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Class VIIIC</h3>
+        <p>
+          Selamat datang di website kelas VIIIC SMPN 03 Tanjung Raja.
+          Website ini menjadi pusat informasi kelas, jadwal pelajaran,
+          kegiatan, dan dokumentasi kebersamaan kita.
+        </p>
+        <br>
+        <p><strong>Wali Kelas:</strong> Isi nama wali kelas di sini</p>
+        <p><strong>Ketua Kelas:</strong> Isi nama ketua kelas di sini</p>
+      </div>
+      <div class="quote">
+        <p>“Bersama kita belajar, bersama kita berkembang, bersama kita sukses.”</p>
+        <small>— Class VIIIC</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="jadwal">
+    <div class="section-title"><h2>📚 Jadwal Pelajaran</h2><p>Jadwal pelajaran Class VIIIC</p></div>
+    <table class="schedule"><thead><tr><th>Hari</th><th>Pelajaran</th></tr></thead><tbody>
+      <tr><td>Senin</td><td>Bahasa Indonesia · Matematika · IPS (Ilmu Pengetahuan Sosial) · Prakarya</td></tr>
+      <tr><td>Selasa</td><td>PKN (Pendidikan Kewarganegaraan) · Pendidikan Agama Islam · Bahasa Inggris · IPS (Ilmu Pengetahuan Sosial)</td></tr>
+      <tr><td>Rabu</td><td>IPA (Ilmu Pengetahuan Alam) · PKN (Pendidikan Kewarganegaraan) · Bahasa Lampung · Bahasa Indonesia</td></tr>
+      <tr><td>Kamis</td><td>IPA (Ilmu Pengetahuan Alam) · Bahasa Indonesia · Matematika</td></tr>
+      <tr><td>Jum'at</td><td>Pendidikan Agama Islam · PJOK (Pendidikan Jasmani dan Rohani)</td></tr>
+      <tr><td>Sabtu</td><td>Matematika · Bahasa Inggris</td></tr>
+    </tbody></table>
+  </section>
+
+  <section id="piket">
+    <div class="section-title"><h2>🧹 Jadwal Piket Kelas</h2><p>Pembagian tugas piket Class VIIIC</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">🌟</div><h3>Senin</h3><p>• Ayu Amelia — Perempuan</p><p>• Gisela Gebeilia — Perempuan</p><p>• Erik Setiawan — Laki-laki</p><p>• Rahmat Darmawan — Laki-laki</p></div>
+      <div class="card"><div class="icon">📘</div><h3>Selasa</h3><p>• Jesika Putri — Perempuan</p><p>• Karin Kamelia — Perempuan</p><p>• Alvin Kholik — Laki-laki</p><p>• Sandi Leo — Laki-laki</p></div>
+      <div class="card"><div class="icon">🌿</div><h3>Rabu</h3><p>• Mita Ardila — Perempuan</p><p>• Nuraini — Perempuan</p><p>• Faisal Rizky Munfariz — Laki-laki</p><p>• M. Fajar Rahadian — Laki-laki</p></div>
+      <div class="card"><div class="icon">✨</div><h3>Kamis</h3><p>• Olina Khanza — Perempuan</p><p>• Alifiandra Adhyastha W. — Laki-laki</p><p>• Firmansyah — Laki-laki</p><p>• Muhamad Dafa — Laki-laki</p></div>
+      <div class="card"><div class="icon">🌈</div><h3>Jum'at</h3><p>• Sazia Lutfi Anti — Perempuan</p><p>• Mahesa Tri Yuda — Laki-laki</p><p>• M. Tirta Wiratama — Laki-laki</p><p>• Rafa Rizky Aditya — Laki-laki</p></div>
+      <div class="card"><div class="icon">🎒</div><h3>Sabtu</h3><p>• Siti Arsinta — Perempuan</p><p>• Muhammad Iqbal — Laki-laki</p><p>• Ferry Fernanda — Perempuan</p><p>• Nuridoh — Laki-laki</p></div>
+    </div>
+  </section>
+  <section>
+    <div class="section-title">
+      <h2>Fitur Kelas</h2>
+      <p>Beberapa bagian yang bisa dikembangkan lagi.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">📅</div><h3>Jadwal</h3><p>Jadwal pelajaran dan agenda kelas yang mudah dilihat.</p></div>
+      <div class="card"><div class="icon">📸</div><h3>Galeri</h3><p>Dokumentasi kegiatan, foto bersama, dan momen spesial kelas.</p></div>
+      <div class="card"><div class="icon">📢</div><h3>Pengumuman</h3><p>Tempat menampilkan informasi penting untuk seluruh anggota kelas.</p></div>
+    </div>
+  </section>
+
+  <section id="anggota">
+    <div class="section-title">
+      <h2>👥 Struktur Kelas VIIIC</h2>
+      <p>Susunan pengurus Class VIIIC SMPN 03 Tanjung Raja</p>
+    </div>
+    <div class="grid members">
+      <div class="card member"><div class="avatar">K</div><h3>Ketua</h3><p>Muhammad Iqbal</p></div>
+      <div class="card member"><div class="avatar">W</div><h3>Wakil Ketua</h3><p>M. Fajar Rahadian</p></div>
+      <div class="card member"><div class="avatar">S</div><h3>Sekretaris</h3><p>Jesika Putri</p></div>
+      <div class="card member"><div class="avatar">W</div><h3>Wakil Sekretaris</h3><p>Erik Setiawan</p></div>
+      <div class="card member"><div class="avatar">B</div><h3>Bendahara</h3><p>Nuraini</p></div>
+      <div class="card member"><div class="avatar">W</div><h3>Wakil Bendahara</h3><p>Sazia Lutfianti</p></div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="contact">
+      <h2>Hubungi Class VIIIC</h2>
+      <p style="color:#667085;margin:10px 0 22px">Tambahkan kontak ketua kelas, grup WhatsApp, atau akun media sosial kelas di sini.</p>
+      <a class="btn" style="background:#3157d5;color:white" href="#" onclick="alert('Ganti tombol ini dengan link grup WhatsApp kelas.');return false;">💬 Grup Kelas</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Class VIIIC · SMPN 03 Tanjung Raja
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('navlinks');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  nav.style.position='absolute'; nav.style.right='20px'; nav.style.top='65px';
+  nav.style.background='white'; nav.style.padding='15px'; nav.style.borderRadius='14px';
+  nav.style.boxShadow='0 10px 30px rgba(0,0,0,.12)'; nav.style.flexDirection='column';
+}
+</script>
+</body>
+</html>
